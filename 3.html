@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>فاو - زاخو</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --accent: #0b63ff;
+      --accent-dark: #0749b6;
+      --muted: #6b7280;
+      --radius: 14px;
+      --max-width: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#eef4ff 0%, #f6f8fb 100%);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.55;
+      padding-bottom:80px;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:28px;
+    }
+
+    header{
+      background: linear-gradient(90deg,var(--accent),var(--accent-dark));
+      color:white;
+      position:sticky;
+      top:0;
+      z-index:40;
+      box-shadow: 0 6px 18px rgba(11,99,255,0.12);
+      border-bottom-left-radius:12px;
+      border-bottom-right-radius:12px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      justify-content:space-between;
+      padding:16px 20px;
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      font-weight:700;
+      font-size:18px;
+    }
+    .logo{
+      width:46px;height:46px;border-radius:10px;
+      background:linear-gradient(135deg,#fff7 0%, #fff1 100%);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:white;box-shadow:inset 0 -6px 18px rgba(255,255,255,0.06);
+      border:2px solid rgba(255,255,255,0.12);
+    }
+    nav ul{display:flex;gap:12px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{
+      padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px;color:rgba(255,255,255,0.95)
+    }
+    nav a:hover{background:rgba(255,255,255,0.08)}
+
+    .hero{
+      padding:56px 20px;
+      display:flex;
+      align-items:center;
+      gap:32px;
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+    .hero-left{
+      flex:1;
+      background: rgba(0,0,0,0.2);
+      padding:20px;
+      border-radius:14px;
+    }
+    .kicker{
+      display:inline-block;
+      background:rgba(255,255,255,0.12);
+      color:rgba(255,255,255,0.95);
+      padding:6px 10px;border-radius:999px;
+      font-weight:700;margin-bottom:18px;font-size:13px;
+    }
+    h1{
+      margin:0 0 14px 0;color:white;font-size:34px;line-height:1.05;
+      font-weight:800;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    p.lead{
+      margin:0 0 20px 0;color:white;max-width:620px;
+      font-size:15px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    .cta{
+      display:inline-block;background:white;color:var(--accent);padding:12px 18px;border-radius:10px;font-weight:700;
+      box-shadow: 0 8px 30px rgba(11,99,255,0.18);
+    }
+
+    .hero-right{
+      width:420px;min-width:280px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(15,23,42,0.06);
+      text-align:center;
+    }
+    .card img{
+      width:100%;
+      border-radius:16px;
+      object-fit:cover;
+    }
+    .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .stat{padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(11,99,255,0.06),transparent)}
+    .stat strong{display:block;font-size:18px}
+    .stat span{display:block;font-size:13px;color:var(--muted)}
+
+    section{padding:40px 0}
+    .card-section{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,42,0.03)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    h2{font-size:20px;margin:0 0 12px 0}
+    .muted{color:var(--muted);font-size:14px}
+
+    .project-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(10,10,20,0.03)}
+    .project-card h3{margin:0 0 6px 0;font-size:16px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;background:rgba(11,99,255,0.08);color:var(--accent-dark)}
+
+    ul.goals{padding-left:0;list-style:none;margin:0}
+    ul.goals li{padding:12px;border-radius:10px;margin-bottom:9px;background:linear-gradient(180deg,#fff,#f7fbff);border:1px solid rgba(11,99,255,0.04)}
+    ul.goals li strong{display:block}
+
+    form{display:grid;gap:10px}
+    input,textarea{padding:12px;border:1px solid #e6eefc;border-radius:10px;font-size:14px;outline:none}
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;background:var(--accent);color:white;font-weight:800}
+
+    footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px}
+
+    @media (max-width:980px){
+      .hero{flex-direction:column;align-items:flex-start;padding:28px 20px}
+      .hero-right{width:100%}
+      .grid-3{grid-template-columns:1fr 1fr;gap:12px}
+      nav ul{display:none}
+    }
+    @media (max-width:640px){
+      h1{font-size:24px}
+      .grid-3{grid-template-columns:1fr;gap:12px}
+      .grid-2{grid-template-columns:1fr;gap:12px}
+      .nav{padding:12px}
+      .hero-left p.lead{font-size:14px}
+      .cta{padding:10px 14px;font-size:14px}
+    }
+
+    ::selection{background:var(--accent);color:white}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">فز</div>
+        <div>
+          <div style="font-size:15px">تجمع فاو - زاخو</div>
+          <div style="font-size:12px;opacity:0.9">إدارة: عامر عبد الجبار</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#amir">من هو عامر عبد الجبار</a></li>
+          <li><a href="#goals">الأهداف</a></li>
+          <li><a href="#contact">تواصل</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero" aria-label="الصفحة الرئيسية">
+    <div class="hero-left">
+      <span class="kicker">رؤية وطنية</span>
+      <h1>تجمع فاو — زاخو<br><span style="font-weight:600;font-size:20px;opacity:0.95">ثورة فكر..ثورة تصحيح</span></h1>
+      <p class="lead">من أجل عراقٍ قوي، مزدهر، تسوده العدالة وتُصان فيه كرامة المواطن.</p>
+      <a class="cta" href="#amir">تعرف على القائد</a>
+    </div>
+
+    <div class="hero-right">
+      <div class="card">
+        <img src="amir-abduljabbar.jpg" alt="صورة المهندس عامر عبد الجبار">
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="about">
+      <div class="card-section">
+        <h2>من نحن</h2>
+        <p class="muted"><p>تم تشكيل تنظيم سياسي جديد باسم تجمع الفاو - زاخو برئاسة الخبير الوطني عامر عبد الجبار اسماعيل. يرسم برنامجا لمعالجة الأزمات السياسية والأمنية والمجتمعية بفكر اقتصادي عملي. يرمز إلى الوحدة الوطنية دون التفرقة الطائفية والعنصرية والقومية من أجل أن يعم الامن والاستقرار في العراق الحبيب</p>
+
+        <div style="margin-top:18px" class="grid-3">
+          <div class="project-card">
+            <h3>الرؤية</h3>
+            <p>
+هي بناء عراق قوي وموحّد، يعتمد على اقتصاد منتج يستثمر موقعه الجغرافي وثرواته، ويعتمد على الكفاءات لا المحاصصة، مع دولة قانون تحمي المواطن وتحقق الازدهار من الفاو إلى زاخو.
+            </p>
+            <div style="margin-top:10px"><span class="pill">اقتصاد</span></div>
+          </div>
+
+          <div class="project-card">
+            <h3>القيادة</h3>
+            <p>يترأس التجمع الخبير الوطني عامر عبد الجبار إسماعيل، صاحب خبرة مهنية راسخة في قطاعات النقل والطاقة والاقتصاد، وله دور بارز في طرح وتنفيذ مشاريع إستراتيجية تعزز مكانة العراق الاقتصادية.</p>
+            <div style="margin-top:10px"><span class="pill">خبرة</span></div>
+          </div>
+
+          <div class="project-card">
+            <h3>القيم</h3>
+            <p>النزاهة والكفاءة، واحترام القانون، ووحدة الوطن، وخدمة المواطن وحماية المال العام لبناء عراق مزدهر للجميع.</p>
+            <div style="margin-top:10px"><span class="pill">استدامة</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="amir">
+      <div class="card-section">
+        <h2>من هو المهندس عامر عبد الجبار؟</h2>
+        <p class="muted">
+        عامر عبد الجبار إسماعيل (1962 -) هو مهندس بحري عراقي، ووزير النقل في الحكومة العراقية منذ 2008 حتى 7 تموز عام 2010م، حين أُقيل من منصبه. ويُعتقد أن سبب إقالته كان لرفضه حلّ الخطوط الجوية العراقية من أجل خصخصة النقل الجوي، ولم تكن له كتلة تدافع عنه، لأنه كان مستقلاً، ثم التحق بائتلاف دولة القانون في آذار عام 2010. وهو رئيس تجمع الفاو زاخو، الذي ينتسب إليه خبراء اقتصاديون عراقيون. في 2025 صار رئيس تحالف المعارضة النيابية.
+        </p>
+
+        <ul class="goals" style="margin-top:12px">
+          <li><strong>المؤهلات العلمية:</strong> بكالوريوس في الهندسة البحرية، أكاديمية الخليج العربي، 1986.</li>
+          <li><strong>المناصب:</strong> وزير النقل العراقي، قيادة إصلاحات النقل والموانئ.</li>
+          <li><strong>الإنجازات:</strong> بناء وإعادة تأهيل ساحبات وزوارق بحرية، تطوير موانئ الفاو وأم قصر، تحديث شبكة السكك الحديدية، ورفع الإيرادات الوطنية للنقل.</li>
+          <li><strong>القيم والسمات:</strong> هادئ، ذكي، مجدّ، صادق ومخلص في العمل.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="goals">
+      <div class="card-section">
+        <h2>الأهداف الإستراتيجية</h2>
+        <ul class="goals" style="margin-top:12px">
+          <li><strong>معالجة الهدر الاقتصادي:</strong><div class="muted">الحد من الهدر غير المنظور في جميع مؤسسات الدولة.</div></li>
+          <li><strong>تفعيل الإيرادات غير النفطية:</strong><div class="muted">رفع نسبة الإيرادات غير النفطية لتصل حوالي 70% من الموازنة بحلول 2030.</div></li>
+          <li><strong>إكمال ميناء الفاو الكبير:</strong><div class="muted">ربطه بحرياً مع ميناء إكوادور لتفعيل طريق الحرير بين جنوب العالم وشماله.</div></li>
+          <li><strong>تأسيس هيئة مدينة الفاو الاقتصادية:</strong><div class="muted">مصدر اقتصادي غير نفطي مهم لمستقبل العراق والأجيال القادمة.</div></li>
+          <li><strong>دعم الصناعة والزراعة الوطنية:</strong><div class="muted">تشغيل أكبر عدد ممكن من العاطلين عن العمل وإعطاء الأولوية للمنتج الوطني.</div></li>
+          <li><strong>تطوير الخدمات العامة:</strong><div class="muted">خطة خمسية لإدارة مشاريع الطاقة، الماء، الطرق، المدارس، والمستشفيات.</div></li>
+          <li><strong>تأسيس مكتب العمل الإلكتروني:</strong><div class="muted">تشغيل العاطلين عن العمل بعدالة وشفافية دون محسوبيات.</div></li>
+          <li><strong>أهداف أخرى:</strong><div class="muted">
+          تشمل تطوير الحكومة الإلكترونية، البريد الوطني، المناهج الدراسية، النظام المصرفي والصحي، دعم الشباب والمرأة، حماية الأسرة، تحسين القضاء، تعزيز الأمن، تمكين المجتمع المدني، والاهتمام بالشهداء والأيتام والمحتاجين.
+          </div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card-section">
+        <h2>تواصل معنا</h2>
+        <p class="muted">
+          الموقع للتعريف فقط وليس تابعاً لتجمع الفاو زاخو نفسه. للمزيد من المعلومات، يمكنكم مراسلتي على التليجرام: <strong>@Ydanlis</strong>.<br>
+          وإذا أردت معرفة المرشح الموجود في محافظتك، يمكنك مراسلتي مباشرة على نفس الحساب.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © جميع الحقوق محفوظة — تحالف فاو - زاخو • إدارة: عامر عبد الجبار
+  </footer>
+
+</body>
+</html>
